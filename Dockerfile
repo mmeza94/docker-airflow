@@ -59,6 +59,12 @@ RUN set -ex \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
     && pip install pyasn1 \
+    && pip install adlfs==2021.7.1 \
+    && pip install azure-storage-blob==12.14.1 \
+    && pip install dask==2023.3.0 \
+    && pip install fastparquet==0.4.0 \
+    && pip install pandas==1.5.2 \
+    && pip install pyarrow==9.0.0 \
     && pip install apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
     && pip install 'redis==3.2' \
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
